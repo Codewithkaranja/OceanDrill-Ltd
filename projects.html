@@ -4,912 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Projects | Ocean Drill Limited | Completed Drilling Projects</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #cf2e2e;
-            --secondary-color: #2a5d9e;
-            --accent-color: #1e7ac7;
-            --dark-color: #111;
-            --light-color: #f8f9fa;
-            --gray-color: #6c757d;
-            --light-gray: #e9ecef;
-            --transition: all 0.3s ease;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
-            --border-radius: 8px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Jost', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 70px;
-            height: 4px;
-            background: var(--primary-color);
-        }
-
-        h3 {
-            font-size: 1.8rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .text-center h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-family: 'Jost', sans-serif;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #b02727;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-secondary {
-            background: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #1f4a7e;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transition);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-        }
-
-        .logo span {
-            color: var(--secondary-color);
-        }
-
-        .logo i {
-            margin-right: 10px;
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            font-weight: 500;
-            font-size: 1.1rem;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover:after,
-        nav ul li a.active:after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            margin-left: 30px;
-        }
-
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark-color);
-        }
-
-        /* Hero Section - Projects Page */
-        .hero-projects {
-            height: 90vh;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            margin-top: 0;
-        }
-
-        .hero-projects-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .hero-projects h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-projects p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            margin-top: 40px;
-            justify-content: center;
-        }
-
-        /* Projects Stats */
-        .projects-stats {
-            background: var(--primary-color);
-            color: white;
-            padding: 70px 0;
-        }
-
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            padding: 20px;
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Projects Filter */
-        .projects-filter {
-            background: var(--light-color);
-            padding: 50px 0;
-        }
-
-        .filter-container {
-            text-align: center;
-        }
-
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .filter-btn {
-            padding: 12px 25px;
-            background: white;
-            border: 1px solid var(--light-gray);
-            border-radius: var(--border-radius);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        /* Projects Gallery */
-        .projects-gallery {
-            background: white;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .project-card {
-            background: var(--light-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .project-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-
-        .project-img {
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(42, 93, 158, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .project-view-btn {
-            background: white;
-            color: var(--primary-color);
-            border: none;
-            padding: 12px 25px;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .project-view-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: var(--gray-color);
-        }
-
-        .project-location, .project-type {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .project-content h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Case Studies */
-        .case-studies {
-            background: var(--light-color);
-        }
-
-        .case-studies-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .case-study {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 100px;
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .case-study:nth-child(even) .case-image {
-            order: 2;
-        }
-
-        .case-study:nth-child(even) .case-content {
-            order: 1;
-        }
-
-        .case-image {
-            height: 400px;
-        }
-
-        .case-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .case-content {
-            padding: 40px;
-        }
-
-        .case-stats {
-            display: flex;
-            gap: 30px;
-            margin: 25px 0;
-        }
-
-        .case-stat {
-            text-align: center;
-        }
-
-        .case-stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .case-stat-label {
-            font-size: 0.9rem;
-            color: var(--gray-color);
-        }
-
-        /* Clients Section */
-        .clients-section {
-            background: white;
-        }
-
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 40px;
-            align-items: center;
-            margin-top: 50px;
-        }
-
-        .client-logo {
-            background: var(--light-color);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 120px;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .client-logo:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .client-logo img {
-            max-width: 100%;
-            max-height: 60px;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .client-logo:hover img {
-            filter: grayscale(0);
-            opacity: 1;
-        }
-
-        /* CTA Section */
-        .projects-cta {
-            background: linear-gradient(rgba(42, 93, 158, 0.9), rgba(42, 93, 158, 0.9)), url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-        }
-
-        .projects-cta h2 {
-            color: white;
-        }
-
-        .projects-cta h2:after {
-            background: white;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .projects-cta p {
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 70px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo span {
-            color: var(--primary-color);
-        }
-
-        .footer-links h4 {
-            color: white;
-            margin-bottom: 25px;
-            font-size: 1.2rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links ul li a {
-            color: #bbb;
-            transition: var(--transition);
-        }
-
-        .footer-links ul li a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #bbb;
-            font-size: 0.9rem;
-        }
-
-        /* Project Modal */
-        .project-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 20px;
-        }
-
-        .project-modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: var(--border-radius);
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.2rem;
-            z-index: 10;
-        }
-
-        .modal-img {
-            height: 300px;
-            overflow: hidden;
-        }
-
-        .modal-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .modal-body {
-            padding: 40px;
-        }
-
-        .modal-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .modal-stat {
-            padding: 20px;
-            background: var(--light-color);
-            border-radius: var(--border-radius);
-        }
-
-        .modal-stat-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .modal-stat-label {
-            font-size: 0.9rem;
-            color: var(--gray-color);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            h1 {
-                font-size: 3rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-projects h1 {
-                font-size: 3.2rem;
-            }
-            
-            .stats-container {
-                gap: 20px;
-            }
-            
-            .case-study {
-                gap: 40px;
-            }
-            
-            .modal-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-            }
-            
-            nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 0 0 20px 0;
-            }
-            
-            .nav-cta {
-                margin: 20px 0 0 0;
-            }
-            
-            .hero-projects h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-projects p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .case-study {
-                grid-template-columns: 1fr;
-                margin-bottom: 70px;
-            }
-            
-            .case-study:nth-child(even) .case-image,
-            .case-study:nth-child(even) .case-content {
-                order: initial;
-            }
-            
-            .case-image {
-                height: 300px;
-            }
-            
-            .clients-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            section {
-                padding: 70px 0;
-            }
-            
-            .hero-projects {
-                min-height: 600px;
-            }
-            
-            .hero-projects h1 {
-                font-size: 2.2rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-            }
-            
-            .case-content {
-                padding: 25px;
-            }
-            
-            .modal-body {
-                padding: 25px;
-            }
-        }
-    </style>
+   <link rel="stylesheet" href="projects.css">
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header id="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-water"></i>
-                Ocean<span>Drill</span>
-            </a>
-            
-            <div class="mobile-toggle" id="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li class="nav-cta"><a href="contact.html" class="btn btn-primary">Get Quote</a></li>
-                </ul>
-            </nav>
+   <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="ocean drill (EA) ltd logo.webp"
+            alt="Oceandrill(EA) Ltd. Logo"
+            class="logo-img"
+          />
+
+          <!-- Logo Provision -->
         </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="mainNav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <!-- <li><a href="solar.html">Solar Solutions</a></li> -->
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="#contact" class="btn btn-primary">Get Quote</a></li>
+              
+          </ul>
+        </nav>
+
+        <!--   <div class="nav-cta">
+          <a href="#contact" class="btn btn-primary">Get Quote</a>
+        </div>-->
+      </div>
     </header>
 
     <!-- Hero Section - Projects Page -->
@@ -917,7 +53,7 @@
         <div class="container">
             <div class="hero-projects-content">
                 <h1>Our Project Portfolio</h1>
-                <p>Showcasing 600+ successful drilling projects across Kenya. From residential boreholes to large-scale commercial water systems, explore our portfolio of reliable water solutions.</p>
+                <p>600+ successful drilling projects across Kenya — from homes to large-scale commercial systems.</p>
                 
                 <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -928,28 +64,34 @@
     </section>
 
     <!-- Projects Stats -->
-    <section class="projects-stats">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <span class="stat-number">600+</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">25+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">42</span>
-                    <span class="stat-label">Counties Covered</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">98%</span>
-                    <span class="stat-label">Client Satisfaction</span>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section class="projects-stats">
+  <div class="container">
+    <div class="stats-container">
+
+      <div class="stat-item">
+        <span class="stat-number" data-target="600" data-suffix="+">0+</span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-number" data-target="25" data-suffix="+">0+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-number" data-target="42">0</span>
+        <span class="stat-label">Counties Covered</span>
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-number" data-target="98" data-suffix="%">0%</span>
+        <span class="stat-label">Client Satisfaction</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Projects Filter -->
     <section class="projects-filter">
@@ -978,7 +120,7 @@
                 <div class="project-card" data-category="residential">
                     <div class="project-badge">Residential</div>
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Karen Estate Borehole">
+                        <img src="Ocean Drill Field Work.webp" alt="Karen Estate Borehole">
                         <div class="project-overlay">
                             <button class="project-view-btn" data-project="1">View Details</button>
                         </div>
@@ -1003,7 +145,7 @@
                 <div class="project-card" data-category="commercial">
                     <div class="project-badge">Commercial</div>
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Hotel Water System">
+                        <img src="Ocean Drill Pipes.webp" alt="Hotel Water System">
                         <div class="project-overlay">
                             <button class="project-view-btn" data-project="2">View Details</button>
                         </div>
@@ -1028,7 +170,7 @@
                 <div class="project-card" data-category="agricultural">
                     <div class="project-badge">Agricultural</div>
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1620321020508-d909e86b167c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Farm Irrigation">
+                        <img src="Ocean Drill (EA) Ltd lorry.webp" alt="Farm Irrigation">
                         <div class="project-overlay">
                             <button class="project-view-btn" data-project="3">View Details</button>
                         </div>
@@ -1053,7 +195,7 @@
                 <div class="project-card" data-category="institutional">
                     <div class="project-badge">Institutional</div>
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="School Water Project">
+                        <img src="Ocean Drill Rig3.jpg" alt="School Water Project">
                         <div class="project-overlay">
                             <button class="project-view-btn" data-project="4">View Details</button>
                         </div>
@@ -1078,7 +220,7 @@
                 <div class="project-card" data-category="rehabilitation">
                     <div class="project-badge">Rehabilitation</div>
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Borehole Rehabilitation">
+                        <img src="Ocean Drill Majamaa.webp" alt="Borehole Rehabilitation">
                         <div class="project-overlay">
                             <button class="project-view-btn" data-project="5">View Details</button>
                         </div>
@@ -1103,7 +245,7 @@
                 <div class="project-card" data-category="commercial">
                     <div class="project-badge">Commercial</div>
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Factory Water System">
+                        <img src="ocean drill (EA) ltd logo.webp" alt="Factory Water System">
                         <div class="project-overlay">
                             <button class="project-view-btn" data-project="6">View Details</button>
                         </div>
@@ -1139,7 +281,7 @@
                 <!-- Case Study 1 -->
                 <div class="case-study">
                     <div class="case-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Large Scale Drilling">
+                        <img src="Ocean Drill Field 2.webp" alt="Large Scale Drilling">
                     </div>
                     <div class="case-content">
                         <h3>Large-Scale Agricultural Irrigation Project</h3>
@@ -1172,7 +314,7 @@
                 <!-- Case Study 2 -->
                 <div class="case-study">
                     <div class="case-image">
-                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Urban Drilling">
+                        <img src="Ocean Drill Gututhuka.webp" alt="Urban Drilling">
                     </div>
                     <div class="case-content">
                         <h3>Urban Commercial Complex Water Solution</h3>
@@ -1206,41 +348,73 @@
     </section>
 
     <!-- Clients Section -->
-    <section class="clients-section">
-        <div class="container">
-            <div class="text-center">
-                <h2>Our Valued Clients</h2>
-                <p>We have provided drilling solutions for a diverse range of clients across Kenya</p>
-            </div>
-            
-            <div class="clients-grid">
-                <div class="client-logo">
-                    <i class="fas fa-building" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
-                </div>
-                <div class="client-logo">
-                    <i class="fas fa-school" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
-                </div>
-                <div class="client-logo">
-                    <i class="fas fa-hotel" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
-                </div>
-                <div class="client-logo">
-                    <i class="fas fa-hospital" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
-                </div>
-                <div class="client-logo">
-                    <i class="fas fa-tractor" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
-                </div>
-                <div class="client-logo">
-                    <i class="fas fa-industry" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
-                </div>
-                <div class="client-logo">
-                    <i class="fas fa-home" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
-                </div>
-                <div class="client-logo">
-                    <i class="fas fa-university" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
-                </div>
-            </div>
+    <!-- Clients Section (Swiper) -->
+<section class="clients-section">
+  <div class="container">
+    <div class="text-center">
+      <h2>Our Valued Clients</h2>
+      <p>We have provided drilling solutions for a diverse range of clients across Kenya</p>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper clientsSwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="client-logo">
+            <i class="fas fa-building"></i>
+          </div>
         </div>
-    </section>
+
+        <div class="swiper-slide">
+          <div class="client-logo">
+            <i class="fas fa-school"></i>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-logo">
+            <i class="fas fa-hotel"></i>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-logo">
+            <i class="fas fa-hospital"></i>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-logo">
+            <i class="fas fa-tractor"></i>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-logo">
+            <i class="fas fa-industry"></i>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-logo">
+            <i class="fas fa-home"></i>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-logo">
+            <i class="fas fa-university"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- optional controls -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
     <!-- CTA Section -->
     <section class="projects-cta">
@@ -1258,58 +432,98 @@
     </section>
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        Ocean<span>Drill</span>
-                    </div>
-                    <p>Professional borehole drilling and water solutions company with over 25 years of experience delivering reliable water access across Kenya.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Project Categories</h4>
-                    <ul>
-                        <li><a href="#projects" class="filter-link" data-filter="residential">Residential Projects</a></li>
-                        <li><a href="#projects" class="filter-link" data-filter="commercial">Commercial Projects</a></li>
-                        <li><a href="#projects" class="filter-link" data-filter="agricultural">Agricultural Projects</a></li>
-                        <li><a href="#projects" class="filter-link" data-filter="institutional">Institutional Projects</a></li>
-                        <li><a href="#projects" class="filter-link" data-filter="rehabilitation">Rehabilitation Projects</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Mlolongo, Nairobi, Kenya</li>
-                        <li><i class="fas fa-phone"></i> +254 708 140 284</li>
-                        <li><i class="fas fa-envelope"></i> odealtd@gmail.com</li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Ocean Drill(EA) Ltd.</h3>
+            <p>
+              Ground Water Experts providing professional borehole drilling,
+              pump installation, and water system solutions across Kenya.
+            </p>
+            <div class="social-links">
+              <a href="https://web.facebook.com/odealtd/?_rdc=1&_rdr#"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="#"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                ><i class="fab fa-instagram"></i
+              ></a>
+             
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Ocean Drill Limited. All Rights Reserved. | P.O. Box 203-00519, Mlolongo, Nairobi, Kenya</p>
-            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul>
+              <li><a href="projects.html">Borehole Drilling</a></li>
+             
+              <li><a href="services.html">Borehole Rehabilitation</a></li>
+              <li><a href="services.html">Irrigation Systems</a></li>
+              <li><a href="services.html">Hydrogeological Surveys</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact Info</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i
+                >  <a href="https://maps.app.goo.gl/1G33TdZH9BD2Wkxv5">
+                    
+          Mlolongo, Kenya</a
+                  >
+              </li>
+              <li>
+                <i class="fas fa-phone"></i
+                ><a href="tel:+254708140284"> <span>+254 708 140 284</span></a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i
+                ><a href="mailto: odealtd@gmail.com">
+                  <span> odealtd@gmail.com</span></a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>&copy; <span id="y"></span> Ocean Drill(EA) Ltd.</p>
+<script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+
+          <p style="margin: 0; font-size: 13px; color: #777">
+            Crafted with <span style="color: red">❤</span> by
+            <a
+              href="https://sarahadevelopers.co.ke"
+              target="_blank"
+              rel="noopener"
+              style="color: orange; text-decoration: none; font-weight: 500"
+            >
+              Saraha Developers Ltd.
+            </a>
+          </p>
+        </div>
+        
+      </div>
     </footer>
 
     <!-- Project Modal -->
@@ -1341,272 +555,7 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Mobile Navigation Toggle
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const nav = document.getElementById('nav');
-        
-        mobileToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            mobileToggle.innerHTML = nav.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Header scroll effect
-        const header = document.getElementById('header');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Project Filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-        const filterLinks = document.querySelectorAll('.filter-link');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                const filterValue = button.getAttribute('data-filter');
-                
-                // Filter projects
-                projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-        
-        // Filter links in footer
-        filterLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const filterValue = link.getAttribute('data-filter');
-                
-                // Find and click the corresponding filter button
-                filterButtons.forEach(button => {
-                    if (button.getAttribute('data-filter') === filterValue) {
-                        button.click();
-                    }
-                });
-                
-                // Scroll to projects section
-                const projectsSection = document.getElementById('projects');
-                if (projectsSection) {
-                    window.scrollTo({
-                        top: projectsSection.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Project Modal
-        const projectModal = document.getElementById('projectModal');
-        const modalClose = document.getElementById('modalClose');
-        const viewButtons = document.querySelectorAll('.project-view-btn');
-        
-        // Project data
-        const projects = {
-            1: {
-                title: "Karen Residential Estate Borehole",
-                image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                stats: [
-                    { number: "180m", label: "Depth" },
-                    { number: "45 days", label: "Duration" },
-                    { number: "20", label: "Households" },
-                    { number: "15,000L", label: "Daily Yield" }
-                ],
-                description: "A comprehensive water solution for a luxury residential estate in Karen, Nairobi. The project involved drilling through challenging rock formations to access a reliable water source for the entire estate.",
-                challenges: "The main challenge was the hard volcanic rock formation that required specialized drilling equipment. Additionally, the location within a residential area required minimal disruption to residents and careful management of noise and dust.",
-                solution: "We utilized a state-of-the-art rotary drilling rig with down-the-hole hammer technology. The project was completed in phases to minimize disruption, and we implemented a sophisticated water storage and distribution system with backup power supply."
-            },
-            2: {
-                title: "Mombasa Road Hotel Water System",
-                image: "https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                stats: [
-                    { number: "220m", label: "Depth" },
-                    { number: "60 days", label: "Duration" },
-                    { number: "150", label: "Hotel Rooms" },
-                    { number: "40,000L", label: "Daily Yield" }
-                ],
-                description: "Complete water system solution for a 150-room hotel along Mombasa Road. The system includes borehole drilling, water treatment, storage, and distribution throughout the hotel complex.",
-                challenges: "Limited space for drilling equipment, high water demand for hotel operations, and the need for continuous water supply without interruption to hotel guests.",
-                solution: "We designed a compact drilling plan that worked within the limited space. The system includes dual pumps with automatic switching, a 100,000-liter storage tank, and a comprehensive water treatment system to ensure potable water quality."
-            },
-            3: {
-                title: "Naivasha Flower Farm Irrigation",
-                image: "https://images.unsplash.com/photo-1620321020508-d909e86b167c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                stats: [
-                    { number: "4", label: "Boreholes" },
-                    { number: "280m", label: "Avg Depth" },
-                    { number: "50 acres", label: "Farm Size" },
-                    { number: "80%", label: "Cost Savings" }
-                ],
-                description: "Agricultural irrigation project for a 50-acre flower farm in Naivasha. The system provides reliable water for year-round flower cultivation.",
-                challenges: "High water demand for irrigation, fluctuating water table levels, and the need for cost-effective operation in a competitive agricultural market.",
-                solution: "We drilled four high-yield boreholes strategically located across the farm. Implemented a solar-powered pumping system that significantly reduced operational costs. The system includes automated irrigation controls for efficient water usage."
-            },
-            4: {
-                title: "Kajiado Boarding School Water Supply",
-                image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                stats: [
-                    { number: "250m", label: "Depth" },
-                    { number: "35 days", label: "Duration" },
-                    { number: "500", label: "Students" },
-                    { number: "100%", label: "Water Needs" }
-                ],
-                description: "Community water project for a boarding school in Kajiado County, ending years of water shortages and water trucking expenses.",
-                challenges: "Arid region with deep water table, limited budget for the project, and the need for a reliable system that could be maintained by school staff.",
-                solution: "Deep drilling to access sustainable aquifers. We implemented a robust but simple system with training for school maintenance staff. The project was completed under budget through efficient planning and community involvement."
-            },
-            5: {
-                title: "Westlands Office Complex Borehole Repair",
-                image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                stats: [
-                    { number: "Rehab", label: "Project Type" },
-                    { number: "15 days", label: "Duration" },
-                    { number: "40%", label: "Cost Saving" },
-                    { number: "100%", label: "Restored" }
-                ],
-                description: "Complete rehabilitation of a non-functional borehole for a commercial office complex in Westlands, Nairobi.",
-                challenges: "Unknown condition of the existing borehole, potential damage to casing, and the need to work within a busy commercial complex with minimal disruption.",
-                solution: "Comprehensive assessment using downhole camera inspection. We repaired the casing, cleaned the borehole using high-pressure jetting, and replaced the pump system. The rehabilitation cost 40% less than drilling a new borehole."
-            },
-            6: {
-                title: "Thika Manufacturing Plant Water Supply",
-                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                stats: [
-                    { number: "300m", label: "Depth" },
-                    { number: "50 days", label: "Duration" },
-                    { number: "50,000L", label: "Daily Yield" },
-                    { number: "24/7", label: "Operation" }
-                ],
-                description: "High-capacity borehole system for a manufacturing plant in Thika, providing water for production processes and facility operations.",
-                challenges: "Continuous high-volume water demand for manufacturing processes, water quality requirements for production, and the need for uninterrupted supply.",
-                solution: "We drilled a deep, high-yield borehole with a powerful pumping system. Implemented a water treatment system tailored to the plant's specific needs and installed backup systems to ensure continuous operation."
-            }
-        };
-        
-        // Open modal when view button is clicked
-        viewButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const projectId = button.getAttribute('data-project');
-                const project = projects[projectId];
-                
-                if (project) {
-                    document.getElementById('modalImage').src = project.image;
-                    document.getElementById('modalTitle').textContent = project.title;
-                    
-                    // Populate stats
-                    const modalStats = document.getElementById('modalStats');
-                    modalStats.innerHTML = '';
-                    project.stats.forEach(stat => {
-                        const statElement = document.createElement('div');
-                        statElement.className = 'modal-stat';
-                        statElement.innerHTML = `
-                            <div class="modal-stat-number">${stat.number}</div>
-                            <div class="modal-stat-label">${stat.label}</div>
-                        `;
-                        modalStats.appendChild(statElement);
-                    });
-                    
-                    // Populate description and details
-                    document.getElementById('modalDescription').innerHTML = `<p>${project.description}</p>`;
-                    document.getElementById('modalChallenges').innerHTML = `<h4>Challenges</h4><p>${project.challenges}</p>`;
-                    document.getElementById('modalSolution').innerHTML = `<h4>Our Solution</h4><p>${project.solution}</p>`;
-                    
-                    // Show modal
-                    projectModal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-        
-        // Close modal
-        modalClose.addEventListener('click', () => {
-            projectModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Close modal when clicking outside
-        projectModal.addEventListener('click', (e) => {
-            if (e.target === projectModal) {
-                projectModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Active navigation link highlighting
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollY >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="projects.js"></script>
 </body>
 </html>
